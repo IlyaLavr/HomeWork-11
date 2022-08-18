@@ -13,6 +13,7 @@
 		09397CDC28AEDCEB00ECCDB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09397CDA28AEDCEB00ECCDB9 /* Main.storyboard */; };
 		09397CDE28AEDCEF00ECCDB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09397CDD28AEDCEF00ECCDB9 /* Assets.xcassets */; };
 		09397CE128AEDCEF00ECCDB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09397CDF28AEDCEF00ECCDB9 /* LaunchScreen.storyboard */; };
+		22C953CB6A5918F385126A28 /* Pods_HomeWork_11.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B211C4182B147FB64008694 /* Pods_HomeWork_11.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		09397CDD28AEDCEF00ECCDB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09397CE028AEDCEF00ECCDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09397CE228AEDCEF00ECCDB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37213B6E3F9990DBE30F469C /* Pods-HomeWork-11.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork-11.release.xcconfig"; path = "Target Support Files/Pods-HomeWork-11/Pods-HomeWork-11.release.xcconfig"; sourceTree = "<group>"; };
+		3B211C4182B147FB64008694 /* Pods_HomeWork_11.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWork_11.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1671883BEC8C8BFBB298D03 /* Pods-HomeWork-11.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork-11.debug.xcconfig"; path = "Target Support Files/Pods-HomeWork-11/Pods-HomeWork-11.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22C953CB6A5918F385126A28 /* Pods_HomeWork_11.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				09397CD328AEDCEB00ECCDB9 /* HomeWork-11 */,
 				09397CD228AEDCEB00ECCDB9 /* Products */,
+				A83D6145C461C546373FAAE9 /* Pods */,
+				BC8F59290137DEEB63C3E13A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = "HomeWork-11";
 			sourceTree = "<group>";
 		};
+		A83D6145C461C546373FAAE9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1671883BEC8C8BFBB298D03 /* Pods-HomeWork-11.debug.xcconfig */,
+				37213B6E3F9990DBE30F469C /* Pods-HomeWork-11.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BC8F59290137DEEB63C3E13A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B211C4182B147FB64008694 /* Pods_HomeWork_11.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09397CE528AEDCEF00ECCDB9 /* Build configuration list for PBXNativeTarget "HomeWork-11" */;
 			buildPhases = (
+				C7FA18FA8728D000E9BF8ECE /* [CP] Check Pods Manifest.lock */,
 				09397CCD28AEDCEB00ECCDB9 /* Sources */,
 				09397CCE28AEDCEB00ECCDB9 /* Frameworks */,
 				09397CCF28AEDCEB00ECCDB9 /* Resources */,
+				DFADADC6AC6A3E495354C322 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C7FA18FA8728D000E9BF8ECE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeWork-11-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFADADC6AC6A3E495354C322 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWork-11/Pods-HomeWork-11-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWork-11/Pods-HomeWork-11-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeWork-11/Pods-HomeWork-11-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		09397CCD28AEDCEB00ECCDB9 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		09397CE628AEDCEF00ECCDB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1671883BEC8C8BFBB298D03 /* Pods-HomeWork-11.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +379,7 @@
 		};
 		09397CE728AEDCEF00ECCDB9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37213B6E3F9990DBE30F469C /* Pods-HomeWork-11.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
