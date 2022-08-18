@@ -8,7 +8,6 @@ import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
-
     //MARK: - Lifecicle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class ViewController: UIViewController {
     }()
     
     private lazy var textFieldLogin: UITextField = {
-      let textField = UITextField()
+        let textField = UITextField()
         textField.textColor = .white
         textField.backgroundColor = .white
         textField.textAlignment = .center
@@ -48,7 +47,7 @@ class ViewController: UIViewController {
     }()
     
     private lazy var textFieldPassword: UITextField = {
-      let textField = UITextField()
+        let textField = UITextField()
         textField.textColor = .white
         textField.backgroundColor = .white
         textField.textAlignment = .center
@@ -63,7 +62,7 @@ class ViewController: UIViewController {
     }()
     
     private lazy var buttonEnter: UIButton = {
-      let button = UIButton()
+        let button = UIButton()
         button.backgroundColor = .init(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
         button.setTitle("Login", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14)
@@ -282,7 +281,6 @@ class ViewController: UIViewController {
         }
     }
 }
-
 
 extension UITextField {
     func setLeftIcon(_ image: UIImage) {
