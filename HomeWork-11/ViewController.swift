@@ -72,6 +72,78 @@ class ViewController: UIViewController {
         return button
     }()
     
+    private lazy var buttonRecoveryPassword: UIButton = {
+        let button = UIButton()
+        button.setTitle("Forgot your password?", for: .normal)
+        return button
+    }()
+    
+    private lazy var labelConnect: UILabel = {
+        let label = UILabel()
+        label.text = "Or connect with"
+        label.textColor = .lightGray
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        return label
+    }()
+    
+    private lazy var viewLineLeft: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        view.layer.cornerRadius = 5
+        return view
+    }()
+    
+    private lazy var viewLineRight: UIView = {
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        view.layer.cornerRadius = 5
+        return view
+    }()
+    
+    private lazy var buttonFacebook: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .init(red: 0, green: 159/255, blue: 242/255, alpha: 1)
+        button.setTitle("Facebook", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.layer.cornerRadius = 17
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.3
+        button.layer.shadowOffset = .zero
+        button.layer.shadowRadius = 17
+        return button
+    }()
+    
+    private lazy var buttonTwitter: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .init(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        button.setTitle("Twitter", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.layer.cornerRadius = 17
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.3
+        button.layer.shadowOffset = .zero
+        button.layer.shadowRadius = 17
+        return button
+    }()
+    
+    private lazy var labelNoAccount: UILabel = {
+        let label = UILabel()
+        label.text = "Dont have account?"
+        label.textColor = .lightGray
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 12)
+        return label
+    }()
+    
+    private lazy var buttonSignup: UIButton = {
+        let button = UIButton()
+        button.setTitle("Sign up", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 15)
+        button.setTitleColor(UIColor.init(red: 60/255, green: 80/255, blue: 136/255, alpha: 1), for: .normal)
+        return button
+    }()
+    
     //MARK: - Setup
     private func setupHierarhy () {
         view.addSubview(imageView)
@@ -79,6 +151,14 @@ class ViewController: UIViewController {
         imageView.addSubview(textFieldLogin)
         imageView.addSubview(textFieldPassword)
         imageView.addSubview(buttonEnter)
+        imageView.addSubview(buttonRecoveryPassword)
+        imageView.addSubview(labelConnect)
+        imageView.addSubview(viewLineLeft)
+        imageView.addSubview(viewLineRight)
+        imageView.addSubview(buttonFacebook)
+        imageView.addSubview(buttonTwitter)
+        imageView.addSubview(labelNoAccount)
+        imageView.addSubview(buttonSignup)
     }
     
     private func makeConstraints () {
@@ -117,5 +197,60 @@ class ViewController: UIViewController {
             make.left.equalTo(imageView.snp.left).offset(40)
             make.right.equalTo(imageView.snp.right).offset(-40)
         }
-}
+        buttonRecoveryPassword.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.top.equalTo(buttonEnter).offset(50)
+            make.height.equalTo(40)
+            make.left.equalTo(imageView.snp.left).offset(20)
+            make.right.equalTo(imageView.snp.right).offset(-20)
+        }
+        
+        labelConnect.snp.makeConstraints { make in
+            make.centerX.equalTo(view)
+            make.bottom.equalToSuperview().offset(-170)
+            make.height.equalTo(30)
+            make.width.equalTo(100)
+        }
+        
+        viewLineLeft.snp.makeConstraints { make in
+            make.height.equalTo(2)
+            make.bottom.equalTo(imageView.snp.bottom).offset(-183)
+            make.left.equalTo(imageView.snp.left).offset(20)
+            make.right.equalTo(labelConnect.snp.left).offset(-10)
+        }
+        
+        viewLineRight.snp.makeConstraints { make in
+            make.height.equalTo(2)
+            make.bottom.equalTo(imageView.snp.bottom).offset(-183)
+            make.right.equalTo(imageView.snp.right).offset(-20)
+            make.left.equalTo(labelConnect.snp.right).offset(10)
+        }
+        
+        buttonFacebook.snp.makeConstraints { make in
+            make.bottom.equalTo(imageView.snp.bottom).offset(-110)
+            make.height.equalTo(40)
+            make.left.equalTo(imageView.snp.left).offset(20)
+            make.right.equalTo(imageView.snp.centerX).offset(-10)
+        }
+        
+        buttonTwitter.snp.makeConstraints { make in
+            make.bottom.equalTo(imageView.snp.bottom).offset(-110)
+            make.height.equalTo(40)
+            make.right.equalTo(imageView.snp.right).offset(-20)
+            make.left.equalTo(imageView.snp.centerX).offset(10)
+        }
+        
+        labelNoAccount.snp.makeConstraints { make in
+            
+            make.height.equalTo(50)
+            make.bottom.equalTo(imageView.snp.bottom).offset(-55)
+            make.right.equalTo(imageView.snp.centerX)
+        }
+        
+        buttonSignup.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-57)
+            make.left.equalTo(labelNoAccount.snp.right).offset(10)
+            make.height.equalTo(50)
+        }
+    }
 }
