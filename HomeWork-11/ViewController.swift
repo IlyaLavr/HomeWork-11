@@ -8,7 +8,6 @@ import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
-
     //MARK: - Lifecicle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class ViewController: UIViewController {
     }()
     
     private lazy var textFieldLogin: UITextField = {
-      let textField = UITextField()
+        let textField = UITextField()
         textField.textColor = .white
         textField.backgroundColor = .white
         textField.textAlignment = .center
@@ -42,11 +41,13 @@ class ViewController: UIViewController {
         textField.layer.shadowOpacity = 0.3
         textField.layer.shadowOffset = .zero
         textField.layer.shadowRadius = 17
+        textField.setLeftIcon(UIImage(systemName: "person") ?? UIImage())
+        textField.setRigthIcon(UIImage(named: "check") ?? UIImage())
         return textField
     }()
     
     private lazy var textFieldPassword: UITextField = {
-      let textField = UITextField()
+        let textField = UITextField()
         textField.textColor = .white
         textField.backgroundColor = .white
         textField.textAlignment = .center
@@ -56,11 +57,12 @@ class ViewController: UIViewController {
         textField.layer.shadowOpacity = 0.3
         textField.layer.shadowOffset = .zero
         textField.layer.shadowRadius = 17
+        textField.setLeftIcon(UIImage(systemName: "lock") ?? UIImage())
         return textField
     }()
     
     private lazy var buttonEnter: UIButton = {
-      let button = UIButton()
+        let button = UIButton()
         button.backgroundColor = .init(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
         button.setTitle("Login", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14)
@@ -144,6 +146,17 @@ class ViewController: UIViewController {
         return button
     }()
     
+    private lazy var imageFacebookLogo: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "facebook")
+        return image
+    }()
+    
+    private lazy var imageTwitterLogo: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "twitter")
+        return image
+    }()
     //MARK: - Setup
     private func setupHierarhy () {
         view.addSubview(imageView)
@@ -159,6 +172,8 @@ class ViewController: UIViewController {
         imageView.addSubview(buttonTwitter)
         imageView.addSubview(labelNoAccount)
         imageView.addSubview(buttonSignup)
+        buttonFacebook.addSubview(imageFacebookLogo)
+        buttonTwitter.addSubview(imageTwitterLogo)
     }
     
     private func makeConstraints () {
@@ -252,5 +267,37 @@ class ViewController: UIViewController {
             make.left.equalTo(labelNoAccount.snp.right).offset(10)
             make.height.equalTo(50)
         }
+        
+        imageFacebookLogo.snp.makeConstraints { make in
+            make.height.width.equalTo(25)
+            make.bottom.equalTo(buttonFacebook.snp.bottom).offset(-10)
+            make.left.equalTo(buttonFacebook.snp.left).offset(10)
+        }
+        
+        imageTwitterLogo.snp.makeConstraints { make in
+            make.height.width.equalTo(25)
+            make.bottom.equalTo(buttonTwitter.snp.bottom).offset(-8)
+            make.left.equalTo(buttonTwitter.snp.left).offset(10)
+        }
+    }
+}
+
+extension UITextField {
+    func setLeftIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: 30, y: 5, width: 20, height: 20))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
+        iconContainerView.addSubview(iconView)
+        leftView = iconContainerView
+        leftViewMode = .always
+    }
+    
+    func setRigthIcon(_ image: UIImage) {
+        let iconView = UIImageView(frame: CGRect(x: -15, y: 3, width: 25, height: 25))
+        iconView.image = image
+        let iconContainerView: UIView = UIView(frame: CGRect(x: 20, y: 0, width: 30, height: 30))
+        iconContainerView.addSubview(iconView)
+        rightView = iconContainerView
+        rightViewMode = .always
     }
 }
