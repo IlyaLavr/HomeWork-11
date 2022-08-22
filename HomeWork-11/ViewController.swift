@@ -4,21 +4,17 @@
 //
 //  Created by Илья on 18.08.2022.
 //
+
 import SnapKit
 import UIKit
 
 class ViewController: UIViewController {
-    //MARK: - Lifecicle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupHierarhy()
-        makeConstraints()
-    }
-    //MARK: - Outlets
+    
+    // MARK: - Elements
     private lazy var imageView: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "vk")
-        return image
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "vk")
+        return imageView
     }()
     
     private lazy var labelLogin: UILabel = {
@@ -157,21 +153,29 @@ class ViewController: UIViewController {
         image.image = UIImage(named: "twitter")
         return image
     }()
-    //MARK: - Setup
+    
+    //MARK: - Lifecicle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupHierarhy()
+        makeConstraints()
+    }
+   
+    // MARK: - Setup
     private func setupHierarhy () {
         view.addSubview(imageView)
-        imageView.addSubview(labelLogin)
-        imageView.addSubview(textFieldLogin)
-        imageView.addSubview(textFieldPassword)
-        imageView.addSubview(buttonEnter)
-        imageView.addSubview(buttonRecoveryPassword)
-        imageView.addSubview(labelConnect)
-        imageView.addSubview(viewLineLeft)
-        imageView.addSubview(viewLineRight)
-        imageView.addSubview(buttonFacebook)
-        imageView.addSubview(buttonTwitter)
-        imageView.addSubview(labelNoAccount)
-        imageView.addSubview(buttonSignup)
+        view.addSubview(labelLogin)
+        view.addSubview(textFieldLogin)
+        view.addSubview(textFieldPassword)
+        view.addSubview(buttonEnter)
+        view.addSubview(buttonRecoveryPassword)
+        view.addSubview(labelConnect)
+        view.addSubview(viewLineLeft)
+        view.addSubview(viewLineRight)
+        view.addSubview(buttonFacebook)
+        view.addSubview(buttonTwitter)
+        view.addSubview(labelNoAccount)
+        view.addSubview(buttonSignup)
         buttonFacebook.addSubview(imageFacebookLogo)
         buttonTwitter.addSubview(imageTwitterLogo)
     }
@@ -282,6 +286,7 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - Extensions
 extension UITextField {
     func setLeftIcon(_ image: UIImage) {
         let iconView = UIImageView(frame: CGRect(x: 30, y: 5, width: 20, height: 20))
