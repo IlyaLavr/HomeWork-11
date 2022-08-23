@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: - Elements
+    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "vk")
@@ -19,10 +20,10 @@ class ViewController: UIViewController {
     
     private lazy var labelLogin: UILabel = {
         let label = UILabel()
-        label.text = "Login"
+        label.text = Metrics.labelCenterText
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.font = UIFont.boldSystemFont(ofSize: CGFloat(Metrics.labelFontSize))
         return label
     }()
     
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
         textField.textColor = .white
         textField.backgroundColor = .white
         textField.textAlignment = .center
-        textField.placeholder = "lavrinov86"
+        textField.placeholder = Metrics.loginText
         textField.layer.cornerRadius = 17
         textField.layer.shadowColor = UIColor.black.cgColor
         textField.layer.shadowOpacity = 0.3
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         textField.textColor = .white
         textField.backgroundColor = .white
         textField.textAlignment = .center
-        textField.placeholder = "Password"
+        textField.placeholder = Metrics.passwordText
         textField.layer.cornerRadius = 17
         textField.layer.shadowColor = UIColor.black.cgColor
         textField.layer.shadowOpacity = 0.3
@@ -59,9 +60,9 @@ class ViewController: UIViewController {
     
     private lazy var buttonEnter: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .init(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
-        button.setTitle("Login", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 14)
+        button.backgroundColor = Metrics.enterColour
+        button.setTitle(Metrics.enterTextButton, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: CGFloat(Metrics.enterFontSize))
         button.layer.cornerRadius = 17
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.3
@@ -72,38 +73,38 @@ class ViewController: UIViewController {
     
     private lazy var buttonRecoveryPassword: UIButton = {
         let button = UIButton()
-        button.setTitle("Forgot your password?", for: .normal)
+        button.setTitle(Metrics.recoveryButtonText, for: .normal)
         return button
     }()
     
     private lazy var labelConnect: UILabel = {
         let label = UILabel()
-        label.text = "Or connect with"
-        label.textColor = .lightGray
+        label.text = Metrics.connectText
+        label.textColor = Metrics.connectColourText
         label.textAlignment = .center
-        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.font = UIFont.boldSystemFont(ofSize: CGFloat(Metrics.enterFontSize))
         return label
     }()
     
     private lazy var viewLineLeft: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = Metrics.lineLeftColour
         view.layer.cornerRadius = 5
         return view
     }()
     
     private lazy var viewLineRight: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = Metrics.lineRigthColour
         view.layer.cornerRadius = 5
         return view
     }()
     
     private lazy var buttonFacebook: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .init(red: 0, green: 159/255, blue: 242/255, alpha: 1)
-        button.setTitle("Facebook", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.backgroundColor = Metrics.facebookBackgroungColour
+        button.setTitle(Metrics.facebookButtonText, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: CGFloat(Metrics.facebookFontSize))
         button.layer.cornerRadius = 17
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.3
@@ -114,9 +115,9 @@ class ViewController: UIViewController {
     
     private lazy var buttonTwitter: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .init(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
-        button.setTitle("Twitter", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.backgroundColor = Metrics.twitterBackgroundColour
+        button.setTitle(Metrics.twitterButtonTaxt, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: CGFloat(Metrics.twitterFontSize))
         button.layer.cornerRadius = 17
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOpacity = 0.3
@@ -127,18 +128,18 @@ class ViewController: UIViewController {
     
     private lazy var labelNoAccount: UILabel = {
         let label = UILabel()
-        label.text = "Dont have account?"
-        label.textColor = .lightGray
+        label.text = Metrics.noAccountText
+        label.textColor = Metrics.noAccountColour
+        label.font = UIFont.boldSystemFont(ofSize: CGFloat(Metrics.noAccountFontSize))
         label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 12)
         return label
     }()
     
     private lazy var buttonSignup: UIButton = {
         let button = UIButton()
-        button.setTitle("Sign up", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 15)
-        button.setTitleColor(UIColor.init(red: 60/255, green: 80/255, blue: 136/255, alpha: 1), for: .normal)
+        button.setTitle(Metrics.signUpButtonText, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: CGFloat(Metrics.signUpFontSize))
+        button.setTitleColor(Metrics.signUpColour, for: .normal)
         return button
     }()
     
@@ -155,6 +156,7 @@ class ViewController: UIViewController {
     }()
     
     //MARK: - Lifecicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHierarhy()
@@ -162,6 +164,7 @@ class ViewController: UIViewController {
     }
    
     // MARK: - Setup
+    
     private func setupHierarhy () {
         view.addSubview(imageView)
         view.addSubview(labelLogin)
@@ -287,6 +290,37 @@ class ViewController: UIViewController {
 }
 
 // MARK: - Extensions
+
+extension ViewController {
+    struct Metrics {
+        static let labelCenterText = "Login"
+        static let labelFontSize = 30
+        static let loginText = "lavrinov86"
+        static let passwordText = "Password"
+        static let enterColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        static let enterTextButton = "Login"
+        static let connectText = "Or connect with"
+        static let enterFontSize = 14
+        static let recoveryButtonText = "Forgot your password?"
+        static let connectFontSize = 12
+        static let connectColourText = UIColor.lightGray
+        static let lineLeftColour = UIColor.lightGray
+        static let lineRigthColour = UIColor.lightGray
+        static let facebookBackgroungColour = UIColor(red: 0, green: 159/255, blue: 242/255, alpha: 1)
+        static let facebookButtonText = "Facebook"
+        static let facebookFontSize = 12
+        static let twitterBackgroundColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        static let twitterButtonTaxt = "Twitter"
+        static let twitterFontSize = 12
+        static let noAccountText = "Dont have account?"
+        static let noAccountColour = UIColor.lightGray
+        static let noAccountFontSize = 12
+        static let signUpFontSize = 15
+        static let signUpColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        static let signUpButtonText = "Sign up"
+    }
+}
+
 extension UITextField {
     func setLeftIcon(_ image: UIImage) {
         let iconView = UIImageView(frame: CGRect(x: 30, y: 5, width: 20, height: 20))
