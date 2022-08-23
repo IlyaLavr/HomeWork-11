@@ -12,34 +12,6 @@ class ViewController: UIViewController {
     
     // MARK: - Elements
     
-    struct Metrics {
-        static let labelCenterText = "Login"
-        static let labelFontSize = 30
-        static let loginText = "lavrinov86"
-        static let passwordText = "Password"
-        static let enterColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
-        static let enterTextButton = "Login"
-        static let connectText = "Or connect with"
-        static let enterFontSize = 14
-        static let recoveryButtonText = "Forgot your password?"
-        static let connectFontSize = 12
-        static let connectColourText = UIColor.lightGray
-        static let lineLeftColour = UIColor.lightGray
-        static let lineRigthColour = UIColor.lightGray
-        static let facebookBackgroungColour = UIColor(red: 0, green: 159/255, blue: 242/255, alpha: 1)
-        static let facebookButtonText = "Facebook"
-        static let facebookFontSize = 12
-        static let twitterBackgroundColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
-        static let twitterButtonTaxt = "Twitter"
-        static let twitterFontSize = 12
-        static let noAccountText = "Dont have account?"
-        static let noAccountColour = UIColor.lightGray
-        static let noAccountFontSize = 12
-        static let signUpFontSize = 15
-        static let signUpColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
-        static let signUpButtonText = "Sign up"
-    }
-    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "vk")
@@ -184,6 +156,7 @@ class ViewController: UIViewController {
     }()
     
     //MARK: - Lifecicle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHierarhy()
@@ -191,6 +164,7 @@ class ViewController: UIViewController {
     }
    
     // MARK: - Setup
+    
     private func setupHierarhy () {
         view.addSubview(imageView)
         view.addSubview(labelLogin)
@@ -316,6 +290,37 @@ class ViewController: UIViewController {
 }
 
 // MARK: - Extensions
+
+extension ViewController {
+    struct Metrics {
+        static let labelCenterText = "Login"
+        static let labelFontSize = 30
+        static let loginText = "lavrinov86"
+        static let passwordText = "Password"
+        static let enterColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        static let enterTextButton = "Login"
+        static let connectText = "Or connect with"
+        static let enterFontSize = 14
+        static let recoveryButtonText = "Forgot your password?"
+        static let connectFontSize = 12
+        static let connectColourText = UIColor.lightGray
+        static let lineLeftColour = UIColor.lightGray
+        static let lineRigthColour = UIColor.lightGray
+        static let facebookBackgroungColour = UIColor(red: 0, green: 159/255, blue: 242/255, alpha: 1)
+        static let facebookButtonText = "Facebook"
+        static let facebookFontSize = 12
+        static let twitterBackgroundColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        static let twitterButtonTaxt = "Twitter"
+        static let twitterFontSize = 12
+        static let noAccountText = "Dont have account?"
+        static let noAccountColour = UIColor.lightGray
+        static let noAccountFontSize = 12
+        static let signUpFontSize = 15
+        static let signUpColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        static let signUpButtonText = "Sign up"
+    }
+}
+
 extension UITextField {
     func setLeftIcon(_ image: UIImage) {
         let iconView = UIImageView(frame: CGRect(x: 30, y: 5, width: 20, height: 20))
