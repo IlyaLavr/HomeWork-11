@@ -11,32 +11,33 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: - Elements
+    
     struct Metrics {
-        static var labelText = "Login"
-        static var labelFontSize = 30
-        static var loginText = "lavrinov86"
-        static var passwordText = "Password"
-        static var enterColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
-        static var enterTextButton = "Login"
-        static var connectText = "Or connect with"
-        static var enterFontSize = 14
-        static var recoveryButtonText = "Forgot your password?"
-        static var connectFontSize = 12
-        static var connectColourText = UIColor.lightGray
-        static var lineLeftColour = UIColor.lightGray
-        static var lineRigthColour = UIColor.lightGray
-        static var facebookBackgroungColour = UIColor(red: 0, green: 159/255, blue: 242/255, alpha: 1)
-        static var facebookButtonText = "Facebook"
-        static var facebookFontSize = 12
-        static var twitterBackgroundColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
-        static var twitterButtonTaxt = "Twitter"
-        static var twitterFontSize = 12
-        static var noAccountText = "Dont have account?"
-        static var noAccountColour = UIColor.lightGray
-        static var noAccountFontSize = 12
-        static var signUpFontSize = 15
-        static var signUpColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
-        static var signUpButtonText = "Sign up"
+        static let labelCenterText = "Login"
+        static let labelFontSize = 30
+        static let loginText = "lavrinov86"
+        static let passwordText = "Password"
+        static let enterColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        static let enterTextButton = "Login"
+        static let connectText = "Or connect with"
+        static let enterFontSize = 14
+        static let recoveryButtonText = "Forgot your password?"
+        static let connectFontSize = 12
+        static let connectColourText = UIColor.lightGray
+        static let lineLeftColour = UIColor.lightGray
+        static let lineRigthColour = UIColor.lightGray
+        static let facebookBackgroungColour = UIColor(red: 0, green: 159/255, blue: 242/255, alpha: 1)
+        static let facebookButtonText = "Facebook"
+        static let facebookFontSize = 12
+        static let twitterBackgroundColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        static let twitterButtonTaxt = "Twitter"
+        static let twitterFontSize = 12
+        static let noAccountText = "Dont have account?"
+        static let noAccountColour = UIColor.lightGray
+        static let noAccountFontSize = 12
+        static let signUpFontSize = 15
+        static let signUpColour = UIColor(red: 60/255, green: 80/255, blue: 136/255, alpha: 1)
+        static let signUpButtonText = "Sign up"
     }
     
     private lazy var imageView: UIImageView = {
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
     
     private lazy var labelLogin: UILabel = {
         let label = UILabel()
-        label.text = Metrics.labelText
+        label.text = Metrics.labelCenterText
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: CGFloat(Metrics.labelFontSize))
